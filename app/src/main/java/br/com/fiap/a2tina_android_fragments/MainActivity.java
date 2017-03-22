@@ -20,8 +20,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void alteraFragment(Fragment fragment){
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
-
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     public void exibirCarro1(View view) {
